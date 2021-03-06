@@ -13,13 +13,13 @@
 <body class="bg-light">
 <main class="position-absolute w-100 h-100 d-flex align-items-center justify-contents-center" style="top: 0;left: 0;">
     <div class="bg-white p-3 rounded shadow-sm mx-auto">
-        <form action="" method="post">
+        <form action="/" method="post">
             @csrf
             <div class="mb-3">
-                <input type="file" class="form-control">
+                <input type="file" class="form-control" name="file">
             </div>
             <div class="mb-3">
-                <select class="form-select" name="">
+                <select class="form-select" name="report_type">
                     <option value="majoo">
                         Majoo
                     </option>
