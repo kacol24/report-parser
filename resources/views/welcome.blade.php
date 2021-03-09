@@ -13,7 +13,7 @@
 <body class="bg-light">
 <main class="position-absolute w-100 h-100 d-flex align-items-center justify-contents-center" style="top: 0;left: 0;">
     <div class="bg-white p-3 rounded shadow-sm mx-auto">
-        <form action="/" method="post">
+        <form action="/" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <input type="file" class="form-control" name="file">
