@@ -17,7 +17,7 @@ class ParserController extends Controller
         'Card - Shopeepay' => 'SHOPEEPAY',
         'Card - Gopay'     => 'GOPAY',
         'Card - DANA'      => 'DANA',
-        'Card - GrabFood'  => 'GRAB',
+        'Card - GrabFood'  => 'GRABFOOD',
         'Card - Debit BCA' => 'EDC',
     ];
 
