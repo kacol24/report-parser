@@ -33,7 +33,9 @@ class ParserController extends Controller
 
         $imported = (new $importer)->toCollection($request->file('file'));
         $mapped = $imported->first()->filter(function ($value) {
-            return isset(self::PAYMENT_MAPPER[$value['metode_pembayaran']]);
+            $method = explode(',', $value['metode_pembayaran']);
+
+            return isset(self::PAYMENT_MAPPER[$method[0]]);
         })->groupBy(function ($row) {
             return Carbon::parse($row['waktu_order'])->format('Y/m/d');
         })->map(function ($byDate, $date) {
