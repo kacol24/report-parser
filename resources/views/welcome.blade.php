@@ -25,9 +25,14 @@
                     </option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary float-end">
-                Submit
-            </button>
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary me-3" name="generate_type" value="chart">
+                    Order Time Chart
+                </button>
+                <button type="submit" class="btn btn-primary" name="generate_type" value="exporter">
+                    Submit
+                </button>
+            </div>
         </form>
     </div>
 </main>

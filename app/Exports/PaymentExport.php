@@ -41,6 +41,11 @@ class PaymentExport implements FromCollection, Responsable, ShouldAutoSize, With
             'source'      => 'WALK IN',
             'destination' => 'EDC',
         ],
+        'EDC/OTHER' => [
+            'commission'  => 1,
+            'source'      => 'WALK IN',
+            'destination' => 'EDC',
+        ],
         'DANA'      => [
             'commission'  => 0,
             'source'      => 'WALK IN',
@@ -74,13 +79,13 @@ class PaymentExport implements FromCollection, Responsable, ShouldAutoSize, With
             $currentPayment = self::PAYMENT_MAPPER[$value['payment']];
 
             return [
-                'DESCRIPTION'     => $value['payment'] . '/' . $value['date'],
+                'DESCRIPTION'     => $value['payment'].'/'.$value['date'],
                 'ORIGINAL AMOUNT' => $value['amount'],
                 'FINAL AMOUNT'    => $value['amount'] * ((100 - $currentPayment['commission']) / 100),
                 'SOURCE'          => $currentPayment['source'],
                 'DESTINATION'     => $currentPayment['destination'],
                 'DATE'            => Carbon::parse($value['date'])->format('Y-m-d'),
-                'MDR'             => $currentPayment['commission'] > 0 ? 'MDR: ' . $currentPayment['commission'] . '%' : '',
+                'MDR'             => $currentPayment['commission'] > 0 ? 'MDR: '.$currentPayment['commission'].'%' : '',
             ];
         });
     }
